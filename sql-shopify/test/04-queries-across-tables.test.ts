@@ -15,7 +15,7 @@ describe("Queries Across Tables", () => {
         INNER JOIN
             pricing_plans ON app.pricing_plan_id = pricing_plans.id
         WHERE
-            price = "Free"`;
+            price IN("Free","Free to install")`;
         const result = await db.selectSingleRow(query);
         expect(result).toEqual({
             count: 854 //Original: 1112  - Man seit visu laiku meta 854, lai ka es meginatu
