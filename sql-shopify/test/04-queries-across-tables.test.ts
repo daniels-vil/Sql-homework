@@ -18,13 +18,7 @@ describe("Queries Across Tables", () => {
             price IN("Free","Free to install")`;
         const result = await db.selectSingleRow(query);
         expect(result).toEqual({
-            count: 854 //Original: 1112  - Man seit visu laiku meta 854, lai ka es meginatu
-       /*
-       SELECT COUNT(*) as count
-        FROM
-            apps_pricing_plans app
-       WHERE pricing_plan_id = 1  - uzrakstot ari sito, paradas tikai 854
-       */
+            count: 1112 
         });
         done();
     }, minutes(1));
